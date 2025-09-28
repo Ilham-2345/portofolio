@@ -1,0 +1,326 @@
+/* Import Font & Pengaturan Dasar */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #f4f4f4;
+    --text-color: #333;
+    --bg-color: #fff;
+    --header-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Header & Navbar */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 10%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    height: var(--header-height);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 35px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Semua Bagian (Section) */
+.section {
+    min-height: 100vh;
+    padding: 100px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Bagian Home */
+#home {
+    flex-direction: row; /* Kembali ke row untuk layout berdampingan */
+}
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px;
+}
+.home-content {
+    flex: 1;
+    max-width: 600px;
+}
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.home-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.home-image {
+    flex: 1;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-image img {
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.6);
+}
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--primary-color);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+/* Bagian About */
+#about {
+    text-align: center;
+}
+
+/* Bagian Portofolio */
+#portfolio {
+    justify-content: flex-start; /* Konten dimulai dari atas */
+}
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+.project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.project-card h3 {
+    padding: 15px 20px 5px;
+}
+.project-card p {
+    padding: 0 20px 20px;
+    font-size: 14px;
+}
+
+/* ====== CSS BARU: BAGIAN TEKNOLOGI & ALAT ====== */
+.tools-section {
+    width: 100%;
+    margin-top: 80px; /* Jarak dari galeri proyek */
+    text-align: center;
+}
+.tools-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.tools-icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.tools-icons-container img {
+    height: 48px; /* Ukuran ikon */
+    width: 48px;
+    filter: grayscale(100%); /* Membuat ikon abu-abu */
+    transition: filter 0.3s, transform 0.3s;
+}
+.tools-icons-container img:hover {
+    filter: grayscale(0%); /* Ikon menjadi berwarna saat disentuh mouse */
+    transform: scale(1.2); /* Sedikit membesar */
+}
+/* ============================================= */
+
+
+/* Bagian Kontak */
+#contact {
+    text-align: center;
+}
+.contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px 10%;
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+    #home {
+        padding-top: 120px; /* Beri ruang lebih di atas pada mobile */
+    }
+    .home-container {
+        flex-direction: column-reverse; /* Gambar di atas, teks di bawah */
+        text-align: center;
+    }
+    .home-image {
+        margin-bottom: 40px;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+    }
+    .navbar {
+        display: none;
+    }
+    .section {
+        padding: 80px 5%;
+    }
+    .home-content h1 {
+        font-size: 42px;
+    }
+    .home-content h3 {
+        font-size: 24px;
+    }
+}
+/* Styling untuk bagian Teknologi & Alat */
+.tools-section {
+    width: 100%;
+    margin-top: 80px; /* Jarak dari galeri proyek */
+    text-align: center;
+}
+
+.tools-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.tools-icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px 40px; /* Jarak vertikal dan horizontal antar item */
+}
+
+/* Wadah untuk setiap ikon dan namanya */
+.tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Jarak antara ikon dan nama */
+    min-width: 80px;
+}
+
+/* Styling untuk gambar ikon */
+.tool-item img {
+    height: 48px;
+    width: 48px;
+    /* Efek opsional agar ikon awalnya abu-abu */
+    filter: grayscale(100%);
+    transition: filter 0.3s, transform 0.3s;
+}
+
+/* Styling untuk teks nama */
+.tool-item span {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+/* Efek saat kursor mouse di atas item */
+.tool-item:hover img {
+    filter: grayscale(0%); /* Ikon menjadi berwarna */
+    transform: scale(1.1); /* Ikon sedikit membesar */
+}
+
+.tool-item:hover span {
+    color: #007BFF; /* Ganti warna teks */
+}
